@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<robot name="omnibot">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.27 0.30 0.05"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+  </link>
+  
+  <joint name="omnibot_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="omni_wheel_link_1"/>
+    <origin xyz="-0.15 -0.135 0.025" rpy="0 0 0"/>
+  </joint>
+  <link name="omni_wheel_link_1">
+    <visual>
+      <geometry>
+        <cylinder length="0.05" radius="0.075"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+  
+  <joint name="omni_wheel_joint_1" type="continuous">
+    <parent link="omni_wheel_link_1"/>
+    <child link="omni_wheel_1"/>
+    <origin xyz="0 0 0.025" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="omni_wheel_1"/>
+  
+  <joint name="omnibot_joint_2" type="fixed">
+    <parent link="base_link"/>
+    <child link="omni_wheel_link_2"/>
+    <origin xyz="-0.15 0.135 0.025" rpy="0 0 0"/>
+  </joint>
+  <link name="omni_wheel_link_2">
+    <visual>
+      <geometry>
+        <cylinder length="0.05" radius="0.075"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+  </link>
+  
+  <joint name="omni_wheel_joint_2" type="continuous">
+    <parent link="omni_wheel_link_2"/>
+    <child link="omni_wheel_2"/>
+    <origin xyz="0 0 0.025" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="omni_wheel_2"/>
+  
+  <joint name="omnibot_joint_3" type="fixed">
+    <parent link="base_link"/>
+    <child link="omni_wheel_link_3"/>
+    <origin xyz="0.15 -0.135 0.025" rpy="0 0 0"/>
+  </joint>
+  <link name="omni_wheel_link_3">
+    <visual>
+      <geometry>
+        <cylinder length="0.05" radius="0.075"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+  </link>
+  
+  <joint name="omni_wheel_joint_3" type="continuous">
+    <parent link="omni_wheel_link_3"/>
+	<child link="omni_wheel_3"/>
+	<origin xyz="0 0 0.025" rpy="0 0 0"/>
+	<axis xyz="0 0 1"/>
+	  </joint>
+	  <link name="omni_wheel_3"/>
+	  <joint name="omnibot_joint_4" type="fixed">
+	    <parent link="base_link"/>
+	    <child link="omni_wheel_link_4"/>
+	    <origin xyz="0.15 0.135 0.025" rpy="0 0 0"/>
+	  </joint>
+	  <link name="omni_wheel_link_4">
+	    <visual>
+	      <geometry>
+		<cylinder length="0.05" radius="0.075"/>
+	      </geometry>
+	      <material name="yellow">
+		<color rgba="1 1 0 1"/>
+	      </material>
+	    </visual>
+	  </link>
+	  <joint name="omni_wheel_joint_4" type="continuous">
+	    <parent link="omni_wheel_link_4"/>
+	    <child link="omni_wheel_4"/>
+	    <origin xyz="0 0 0.025" rpy="0 0 0"/>
+	    <axis xyz="0 0 1"/>
+	  </joint>
+	  
+	</robot>

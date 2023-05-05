@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="grid_world">
+    <!-- Disable the default grid -->
+    <scene>
+      <ambient>0.4 0.4 0.4 1.0</ambient>
+      <background>0.7 0.7 0.7 1.0</background>
+      <grid>false</grid>
+      <shadows>true</shadows>
+      <grid>false</grid>
+    </scene>
+
+    <!-- Add a grid using the interactive markers plugin -->
+    <plugin name="interactive_markers" filename="libinteractive_markers.so">
+      <marker topic="grid_marker" ns="grid" />
+      <server namespace="grid" />
+    </plugin>
+
+    <!-- Add a model of a flat ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <!-- Add a model of a 5x5 grid -->
+    <model name="grid">
+      <pose>0 0 0 0 0 0</pose>
+      <static>true</static>
+      <link name="grid_link">
+        <collision name="grid_collision">
+          <geometry>
+            <box>
+              <size>5 5 0.001</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="grid_visual">
+          <geometry>
+            <box>
+              <size>5 5 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Yellow</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>
+
